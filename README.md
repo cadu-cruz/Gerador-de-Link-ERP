@@ -38,7 +38,7 @@ Exemplo SKU: ABC123-S01
 
 arquivo procurado: ABC123.jpg 
 
-Link a ser gerado: https://retaguarda.benimports.com.br/IMG_2/ABC123_1.jpg 
+Link a ser gerado: https://retaguarda.benimports.com.br/IMG_2/ABC123.jpg 
 
 ## WINTHOR Mesmo comportamento das IMG. 
 Arquivo procurado: ABC123.jpg 
