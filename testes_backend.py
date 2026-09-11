@@ -1,7 +1,10 @@
 from services.imagem_service import *
 from services.link_service import *
 from services.status_service import gerar_status
-
+from services.excel_service import ler_planilha
+from services.processamento_service import processar_sku
+from services.processamento_service import processar_dados
+"""
 #testando extrair ABC123 de ABC123-S01
 print(extrair_codigo_base("ABC123-S01"))
 
@@ -82,3 +85,20 @@ assert (gerar_status(links_completos)) == "OK"
 assert (gerar_status(links_incompletos)) == "Faltando links para as pastas: WINTHOR, VTEX, ML, IMG_2"
 
 print("Função gerar_status funcionando corretamente com links completos e incompletos!")
+
+dados = ler_planilha("planilha teste.xlsx")
+print(dados)
+
+resultado = processar_sku("FOTOS", "ABC123-S01")
+print(resultado)
+"""
+
+
+dados = ler_planilha("planilha teste.xlsx")
+resultado = processar_dados(
+    dados,
+    "FOTOS",
+)
+print(resultado)
+
+
