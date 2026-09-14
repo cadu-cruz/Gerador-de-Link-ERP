@@ -4,6 +4,9 @@ from services.status_service import gerar_status
 from services.excel_service import ler_planilha
 from services.processamento_service import processar_sku
 from services.processamento_service import processar_dados
+from services.excel_service import ler_planilha, salvar_planilha
+from services.processamento_service import identificar_plataforma
+
 """
 #testando extrair ABC123 de ABC123-S01
 print(extrair_codigo_base("ABC123-S01"))
@@ -91,7 +94,7 @@ print(dados)
 
 resultado = processar_sku("FOTOS", "ABC123-S01")
 print(resultado)
-"""
+
 
 
 dados = ler_planilha("planilha teste.xlsx")
@@ -100,5 +103,19 @@ resultado = processar_dados(
     "FOTOS",
 )
 print(resultado)
+"""
 
 
+# Testando criar planilha de resultado
+from services.excel_service import ler_planilha, salvar_planilha
+
+dados = ler_planilha("planilha teste.xlsx")
+resultado = processar_dados(dados, "FOTOS")
+
+caminho_saida = salvar_planilha(
+    resultado,
+    "resultado_teste.xlsx",
+)
+
+print("Planilha salva em:", caminho_saida)
+assert caminho_saida.is_file()

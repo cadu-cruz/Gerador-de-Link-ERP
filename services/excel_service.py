@@ -16,3 +16,14 @@ def ler_planilha(caminho):
     dados ["SKU"] = dados["SKU"].str.strip()
 
     return dados
+
+# função de exportação da planilha
+def salvar_planilha(dados, caminho_saida):
+    arquivo_saida = Path(caminho_saida)
+
+    dados.to_excel(
+        arquivo_saida,
+        index=False,
+    )
+
+    return arquivo_saida
