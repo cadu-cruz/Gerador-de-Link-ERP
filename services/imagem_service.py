@@ -39,8 +39,8 @@ def verificar_imagem_ml(pasta_fotos, sku):
 
 # verificar todas as pastas IMG
 def verificar_imagem_img(pasta_fotos, sku, numero_img):
-    if numero_img not in range(2, 9):
-            raise ValueError("Número da pasta IMG inválido. Deve ser entre 2 e 8.")
+    if numero_img not in range(2, 10):
+            raise ValueError("Número da pasta IMG inválido. Deve ser entre 2 e 9.")
     nome_arquivo = gerar_nome_codigo_base(sku)
     pasta = f"IMG_{numero_img}"
     pasta_fotos = Path(pasta_fotos) / pasta
