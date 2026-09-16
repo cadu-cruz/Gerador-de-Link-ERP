@@ -2,6 +2,7 @@ from pathlib import Path
 import pandas as pd
 
 def ler_planilha(caminho):
+    #Devolve um Dataframe tratado para quem chamar a função
     arquivo = Path(caminho)
     if not arquivo.is_file():
         raise FileNotFoundError(f"O arquivo {caminho} não foi encontrado.")

@@ -7,7 +7,6 @@ from services.processamento_service import processar_dados
 from services.excel_service import ler_planilha, salvar_planilha
 from services.processamento_service import identificar_plataforma
 
-"""
 #testando extrair ABC123 de ABC123-S01
 print(extrair_codigo_base("ABC123-S01"))
 
@@ -52,11 +51,11 @@ print("Link do ML para imagem não existente funcionando corretamente!")
 
 #testando se a imagem existe na pasta determinada entre IMG_2 e IMG_8 e criando o link e fazendo tratamento de erro de pasta que nao existe.
 try:
-    link_imagem_img("FOTOS", "ABC123-S01", 9)
+    link_imagem_img("FOTOS", "ABC123-S01", 10)
 
 except ValueError as erro:
     assert str(erro) == (
-        "Número da pasta IMG inválido. Deve ser entre 2 e 8."
+        "Número da pasta IMG inválido. Deve ser entre 2 e 9."
     )
     print("Tratamento de erro da pasta IMG funcionando!")
 
@@ -103,8 +102,6 @@ resultado = processar_dados(
     "FOTOS",
 )
 print(resultado)
-"""
-
 
 # Testando criar planilha de resultado
 from services.excel_service import ler_planilha, salvar_planilha

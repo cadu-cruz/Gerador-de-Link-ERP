@@ -55,20 +55,21 @@ def processar_dados(dados, pasta_fotos):
         sku_limpo = str(sku).strip()
         resultado_sku = processar_sku(pasta_fotos, sku_limpo)
         resultados.append(resultado_sku)
-        resultado_final = pd.DataFrame(resultados)
-        mapa_colunas = {
-            "IMG_1": "IMAGEM_PRODUTO_1",
-            "IMG_2": "IMAGEM_PRODUTO_2",
-            "IMG_3": "IMAGEM_PRODUTO_3",
-            "IMG_4": "IMAGEM_PRODUTO_4",
-            "IMG_5": "IMAGEM_PRODUTO_5",
-            "IMG_6": "IMAGEM_PRODUTO_6",
-            "IMG_7": "IMAGEM_PRODUTO_7",
-            "IMG_8": "IMAGEM_PRODUTO_8",
-            "IMG_9": "IMAGEM_PRODUTO_9"
+        
+    resultado_final = pd.DataFrame(resultados)
+    mapa_colunas = {
+        "IMG_1": "IMAGEM_PRODUTO_1",
+        "IMG_2": "IMAGEM_PRODUTO_2",
+        "IMG_3": "IMAGEM_PRODUTO_3",
+        "IMG_4": "IMAGEM_PRODUTO_4",
+        "IMG_5": "IMAGEM_PRODUTO_5",
+        "IMG_6": "IMAGEM_PRODUTO_6",
+        "IMG_7": "IMAGEM_PRODUTO_7",
+        "IMG_8": "IMAGEM_PRODUTO_8",
+        "IMG_9": "IMAGEM_PRODUTO_9"
 
-        }
+    }
 
-        resultado_final = resultado_final.rename(columns=mapa_colunas)      
+    resultado_final = resultado_final.rename(columns=mapa_colunas)      
 
     return resultado_final
