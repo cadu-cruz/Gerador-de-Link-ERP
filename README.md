@@ -1,8 +1,8 @@
 # Gerador de Links ERP
 
-Aplicação desktop desenvolvida em Python para gerar URLs de imagens de produtos a partir de uma planilha Excel.
+Automação local desenvolvida em python para geração dos links de imagens para os anuncios nas plataformas marketplaces que a empresa é ativa.
 
-O sistema lê os SKUs dos produtos informados na planilha, verifica quais imagens existem nas pastas do computador e exporta uma nova planilha com os links encontrados e o status de cada produto.
+A automação lê os SKUs dos produtos informados na planilha, verifica quais imagens existem nas pastas do computador e exporta uma nova planilha com os links encontrados e o status de cada produto.
 
 ## Tecnologias utilizadas
 
@@ -157,7 +157,7 @@ STATUS
 
 Quando todas as imagens do produto são encontradas, o status será:
 
-```text
+```
 OK
 ```
 
@@ -165,7 +165,7 @@ Quando alguma imagem não for encontrada, o status indicará as colunas correspo
 
 Exemplo:
 
-```text
+```
 Faltando links para as pastas: IMG_1, IMG_5, IMG_7
 ```
 
@@ -177,6 +177,9 @@ No resultado, `IMG_1` corresponde à coluna `IMAGEM_PRODUTO_1`.
 Gerador-de-Link-ERP/
 ├── main.py
 ├── gui.py
+├── Gerador de Links ERP.spec
+├── installer/
+│   └── gerador_links.iss
 ├── services/
 │   ├── excel_service.py
 │   ├── imagem_service.py
@@ -194,8 +197,28 @@ Gerador-de-Link-ERP/
 - `link_service.py`: gera as URLs das imagens encontradas.
 - `processamento_service.py`: processa os SKUs e organiza o resultado final.
 - `status_service.py`: informa quais imagens não foram encontradas.
+- `Gerador de Links ERP.spec`: configura a criação do aplicativo com PyInstaller.
+- `gerador_links.iss`: configura a criação do instalador com Inno Setup.
 
-## Como executar
+## Download e instalação
+
+A versão pronta para uso é distribuída pela página de [Releases do projeto](https://github.com/cadu-cruz/Gerador-de-Link-ERP/releases).
+
+Para instalar:
+
+1. Acesse a página de Releases.
+2. Abra a versão mais recente disponível.
+3. Na seção **Assets**, baixe o arquivo `Gerador-de-Links-ERP-1.0.0.exe`.
+4. Execute o arquivo baixado e siga as etapas do instalador.
+5. Ao finalizar, abra o programa pelo menu Iniciar ou pelo atalho da área de trabalho, caso tenha escolhido criá-lo.
+
+O instalador já inclui o Python e todas as bibliotecas necessárias. O usuário não precisa instalar Python, Pandas ou CustomTkinter separadamente.
+
+> Esta versão foi desenvolvida para Windows. Como o instalador ainda não possui assinatura digital, o sistema operacional pode identificá-lo como sendo de um editor desconhecido. Confirme sempre que o arquivo foi obtido pela página oficial deste projeto antes de executá-lo.
+
+## Executar a partir do código-fonte
+
+Esta opção é destinada ao desenvolvimento do projeto.
 
 Instale as dependências do projeto:
 
